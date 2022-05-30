@@ -74,11 +74,11 @@ Zedboard Zynq-7000 ARM/FPGA SoC Development Board ([Product Link](https://www.av
 - FPGA FLOW
 
 ![image](https://user-images.githubusercontent.com/92938137/170983942-208374ee-95de-4c6b-b4a1-0501a1dd0dfd.png)
-   - Input: reset and clk
-   - Output: output clk (expected freq)
-   - PLLE2 behaves as a multiplier
-   - Output clk to the  evmyth core as input and also reset is given to is(core_reset)to  give us the output: dac_out
-   - ILA(inter logic analyser) is waveform viewer.
+    - Input: reset and clk
+    - Output: output clk (expected freq)
+    - PLLE2 behaves as a multiplier
+    - Output clk to the  evmyth core as input and also reset is given to is(core_reset)to  give us the output: dac_out
+    - ILA(inter logic analyser) is waveform viewer.
  - STEP 1:
 Launch Vivado and create a new project by selecting the required board
 
