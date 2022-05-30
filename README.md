@@ -1,4 +1,4 @@
-# VSDFPGA
+# VSDFPGA - Implementation of Mixed Signal SoC (RISC-V based Core + PLL) on FPGA
 This repository explains the implementation of Mixed Signal SoC (RISC-V based Core + PLL) on FPGA.
 
 # TABLE OF CONTENT
