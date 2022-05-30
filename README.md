@@ -72,6 +72,7 @@ Zedboard Zynq-7000 ARM/FPGA SoC Development Board ([Product Link](https://www.av
 
 # SIMULATION,SYNTHESIS AND IMPLEMENTATION USING VIVADO TOOL(FPGA FLOW)
 - FPGA FLOW
+
 ![image](https://user-images.githubusercontent.com/92938137/170983942-208374ee-95de-4c6b-b4a1-0501a1dd0dfd.png)
    - Input: reset and clk
    - Output: output clk (expected freq)
@@ -79,16 +80,19 @@ Zedboard Zynq-7000 ARM/FPGA SoC Development Board ([Product Link](https://www.av
    - Output clk to the  evmyth core as input and also reset is given to is(core_reset)to  give us the output: dac_out
    - ILA(inter logic analyser) is waveform viewer.
  - STEP 1:
-Launch Vivado and create a new project ny selecting the required board
+Launch Vivado and create a new project by selecting the required board
+
 ![image](https://user-images.githubusercontent.com/92938137/170984537-04165564-40fd-4d4a-a736-7961176048a8.png)
 ![image](https://user-images.githubusercontent.com/92938137/170984555-328533b3-d2dd-43cb-b8a1-8264bb97ef69.png)
 
 - STEP 2:
 Add rvmyth.v,clk_gate.v and top_Soc.v as design sources
+
 ![image](https://user-images.githubusercontent.com/92938137/170984715-2e07f334-e880-422a-abff-80e5d5538eb7.png)
 
 - STEP 3:
 Generate PLL and ILAs IP from the Xilinx IP catalog
+
 ![image](https://user-images.githubusercontent.com/92938137/170984916-bad0fccf-fb13-4144-87fe-df38d646ae61.png)
 ![image](https://user-images.githubusercontent.com/92938137/170984934-62de14d4-14eb-4b32-b9f8-3409aadbe3f2.png)
 ![image](https://user-images.githubusercontent.com/92938137/170984944-866ccdc2-1045-4fc7-84c2-9a5fdbc103c5.png)
@@ -97,27 +101,33 @@ Generate PLL and ILAs IP from the Xilinx IP catalog
 
 - STEP 4:
 Add the testbench top_Soc_tb.v
+
 ![image](https://user-images.githubusercontent.com/92938137/170985056-92bcb039-c66f-4485-a5bc-98616c34a95b.png)
 
 - STEP 5:
 Run the simulation
+
 ![image](https://user-images.githubusercontent.com/92938137/170985184-7bbb22b5-11b0-438e-a899-cd1d9bb81f5d.png)
 ![image](https://user-images.githubusercontent.com/92938137/170985199-2bd61d22-361c-4e9b-9615-141a70ccd535.png)
 Main_clock period: 30ns and Core_clk period: 10ns
   - Analog waveform:
+  
 ![image](https://user-images.githubusercontent.com/92938137/170985217-69875058-2d6e-4fa2-9c37-702f5d1b4787.png)
 ![image](https://user-images.githubusercontent.com/92938137/170985232-c0fd5657-3c38-4fdc-9622-398f90cd225c.png)
  
 - STEP 6:
 Add the constraints file 
+
 ![image](https://user-images.githubusercontent.com/92938137/170985402-ff9ab3e0-8865-4af4-99dc-2648ce0acfc1.png)
 
 - STEP 7:
 Run the RTL Synthesis
+
 ![image](https://user-images.githubusercontent.com/92938137/170985484-f036f3af-3ff8-4342-811c-b2cff8f7ba86.png)
 
 - STEP 8:
-Run Impelementation and check for any setup and hold time violations.
+Run Impelementation and check for any setup and hold time violations
+
 ![image](https://user-images.githubusercontent.com/92938137/170985999-8a377ee2-d96f-4b02-9f16-e8a507e95857.png)
  - If we observe any hold time violation it is only because of false paths.
  ![image](https://user-images.githubusercontent.com/92938137/170987567-8ce4d89d-65c7-4dfb-bcaa-694c1b70a527.png)
@@ -130,13 +140,17 @@ Run Impelementation and check for any setup and hold time violations.
 
 - STEP 9:
 Generate bit stream and program the FPGA Board
+
 ![image](https://user-images.githubusercontent.com/92938137/170986557-0ff863b5-c476-4c35-a5a6-42e3a11d5177.png)
 ![image](https://user-images.githubusercontent.com/92938137/170986645-f66a5480-1110-480a-88ba-d17e92685284.png)
   - If the reset pin is high:
+  
   ![image](https://user-images.githubusercontent.com/92938137/170987150-657d2c4a-181e-4ea8-bb86-e8436e7e371f.png)
   - If the reset pin is low:
+  
   ![image](https://user-images.githubusercontent.com/92938137/170987222-e8373991-b053-4ed5-abb2-cf2049078482.png)
   - Analog form
+  
   ![image](https://user-images.githubusercontent.com/92938137/170987350-e4c9a87c-1f4b-4e87-a048-0338107ccc3d.png)
 
 
