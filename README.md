@@ -63,12 +63,13 @@ Zedboard Zynq-7000 ARM/FPGA SoC Development Board ([Product Link](https://www.av
 3. `gtkwave rvmyth_pll.vcd`
 - Clk is the output from avsd_pll given as the input to rvmyth core whose output out[7:0] must run from 0 to 255 n 255 to 0
 
-![image](https://user-images.githubusercontent.com/92938137/170981570-1879eb7b-43f8-4d36-9d8d-781b77b735f6.png)
-![image](https://user-images.githubusercontent.com/92938137/170981634-54318d8b-0084-4c7a-9dca-743cfeb98290.png)
-![image](https://user-images.githubusercontent.com/92938137/170981652-bdd2bfef-583d-4941-9bbb-3083ad4c26aa.png)
+![image](https://user-images.githubusercontent.com/92938137/171102193-563ee609-eb4e-4778-9996-0d40f05c98ca.png)
+![image](https://user-images.githubusercontent.com/92938137/171103308-589ca31e-748c-431b-9a49-f42af7683544.png)
+![image](https://user-images.githubusercontent.com/92938137/171103284-84af17f7-ba15-4ef6-8c48-8b477f5159ee.png)
+![image](https://user-images.githubusercontent.com/92938137/171103484-e9318592-1be4-4df1-92e2-0d3a49cface7.png)
 - To convert a digital waveform to analog: data format-> analog -> step
 
-![image](https://user-images.githubusercontent.com/92938137/170981667-ed3fcdf1-8e8f-4560-9641-8e54259e1579.png)
+![image](https://user-images.githubusercontent.com/92938137/171103577-d0f1cd02-d99e-444b-9b96-43b32b1697c2.png)
 
 # SIMULATION,SYNTHESIS AND IMPLEMENTATION USING VIVADO TOOL(FPGA FLOW)
 - FPGA FLOW
@@ -88,16 +89,15 @@ Launch Vivado and create a new project by selecting the required board
 - STEP 2:
 Add rvmyth.v,clk_gate.v and top_Soc.v as design sources
 
-![image](https://user-images.githubusercontent.com/92938137/170984715-2e07f334-e880-422a-abff-80e5d5538eb7.png)
+![image](https://user-images.githubusercontent.com/92938137/171099736-383497d8-dd65-451d-b430-02a6fd3fcdb7.png)
 
 - STEP 3:
 Generate PLL and ILAs IP from the Xilinx IP catalog
 
-![image](https://user-images.githubusercontent.com/92938137/170984916-bad0fccf-fb13-4144-87fe-df38d646ae61.png)
-![image](https://user-images.githubusercontent.com/92938137/170984934-62de14d4-14eb-4b32-b9f8-3409aadbe3f2.png)
-![image](https://user-images.githubusercontent.com/92938137/170984944-866ccdc2-1045-4fc7-84c2-9a5fdbc103c5.png)
-![image](https://user-images.githubusercontent.com/92938137/170984960-22c5b8c4-c668-4498-9f02-72e475185d77.png)
-![image](https://user-images.githubusercontent.com/92938137/170984971-a85e24af-369d-43dd-9e5a-a9ce93c8eb8d.png)
+![image](https://user-images.githubusercontent.com/92938137/171101342-22fc297f-f7b0-432d-adfe-17db25b266af.png)
+![image](https://user-images.githubusercontent.com/92938137/171101562-2ab32b4a-6986-42b5-b322-2f568f4adb87.png)
+![image](https://user-images.githubusercontent.com/92938137/171101704-805924e0-958e-46e9-a6d9-6cab1546d50f.png)
+![image](https://user-images.githubusercontent.com/92938137/171101744-0a3f6fb7-d5dc-44af-b393-270302ef30b4.png)
 
 - STEP 4:
 Add the testbench top_Soc_tb.v
@@ -107,28 +107,25 @@ Add the testbench top_Soc_tb.v
 - STEP 5:
 Run the simulation
 
-![image](https://user-images.githubusercontent.com/92938137/170985184-7bbb22b5-11b0-438e-a899-cd1d9bb81f5d.png)
-![image](https://user-images.githubusercontent.com/92938137/170985199-2bd61d22-361c-4e9b-9615-141a70ccd535.png)
+![image](https://user-images.githubusercontent.com/92938137/171100636-f334df49-66be-4237-80c5-2b8f5ad80ee4.png)
+![image](https://user-images.githubusercontent.com/92938137/171100660-fd8d56d3-62c6-4da2-ac2e-8a7fbe649662.png)
 Main_clock period: 30ns and Core_clk period: 10ns
   - Analog waveform:
   
-![image](https://user-images.githubusercontent.com/92938137/170985217-69875058-2d6e-4fa2-9c37-702f5d1b4787.png)
-![image](https://user-images.githubusercontent.com/92938137/170985232-c0fd5657-3c38-4fdc-9622-398f90cd225c.png)
- 
+![image](https://user-images.githubusercontent.com/92938137/171101102-ee1acc11-000a-497f-b6c2-c76d3c6e5c66.png)
 - STEP 6:
 Add the constraints file 
 
-![image](https://user-images.githubusercontent.com/92938137/170985402-ff9ab3e0-8865-4af4-99dc-2648ce0acfc1.png)
-
+![image](https://user-images.githubusercontent.com/92938137/171098905-c790ae74-e216-4693-9d2a-892a11e9029a.png)
 - STEP 7:
 Run the RTL Synthesis
-
-![image](https://user-images.githubusercontent.com/92938137/170985484-f036f3af-3ff8-4342-811c-b2cff8f7ba86.png)
+![image](https://user-images.githubusercontent.com/92938137/171099385-1fd607a8-70a4-4b9e-9da2-cb8b47876718.png)
+![image](https://user-images.githubusercontent.com/92938137/171099488-d962aefb-496d-4845-8bba-780668e2aafc.png)
 
 - STEP 8:
 Run Impelementation and check for any setup and hold time violations
-
-![image](https://user-images.githubusercontent.com/92938137/170985999-8a377ee2-d96f-4b02-9f16-e8a507e95857.png)
+![image](https://user-images.githubusercontent.com/92938137/171099785-ef3cc4c1-b918-4983-8bf3-d447020e99b2.png)
+![image](https://user-images.githubusercontent.com/92938137/171099847-d18aa59a-1a5f-45a5-aabc-3f4e03c8b2cb.png)
  - If we observe any hold time violation it is only because of false paths.
  ![image](https://user-images.githubusercontent.com/92938137/170987567-8ce4d89d-65c7-4dfb-bcaa-694c1b70a527.png)
  - Therefore set up false time constraints in the Constraints file.
@@ -136,23 +133,14 @@ Run Impelementation and check for any setup and hold time violations
 ` set_false_path -hold -from  [get_pins uut1/inst/plle2_adv_inst/CLKOUT0] -to [get_pins uut3/inst/ila_core_inst/*/D] `
 
 ` set_false_path -hold -from [get_pins uut1/inst/plle2_adv_inst/CLKOUT0] -to[get_pins uut3/inst/ila_core_inst/u_trig/U_TM/N_DDR_MODE.G_NMU[2].U_M/allx_typeA_match_detection.ltlib_v1_0_0_allx_typeA_inst/*/D] `
-![image](https://user-images.githubusercontent.com/92938137/170985868-62aede05-7464-45a9-96c7-8e3a30d45ac7.png)
+![image](https://user-images.githubusercontent.com/92938137/171098762-50520707-29d8-40cb-bf23-a6bfbb9f04fd.png)
 
 - STEP 9:
 Generate bit stream and program the FPGA Board
 
-![image](https://user-images.githubusercontent.com/92938137/170986557-0ff863b5-c476-4c35-a5a6-42e3a11d5177.png)
-![image](https://user-images.githubusercontent.com/92938137/170986645-f66a5480-1110-480a-88ba-d17e92685284.png)
-  - If the reset pin is high:
-  
-  ![image](https://user-images.githubusercontent.com/92938137/170987150-657d2c4a-181e-4ea8-bb86-e8436e7e371f.png)
-  - If the reset pin is low:
-  
-  ![image](https://user-images.githubusercontent.com/92938137/170987222-e8373991-b053-4ed5-abb2-cf2049078482.png)
-  - Analog form
-  
-  ![image](https://user-images.githubusercontent.com/92938137/170987350-e4c9a87c-1f4b-4e87-a048-0338107ccc3d.png)
-
+![image](https://user-images.githubusercontent.com/92938137/171098658-f304fe99-7340-4792-99fe-6c1eb09c1608.png)
+This is the output you get after which u connect your borad and check for the waveform simulation(Which i do not have currently)
+![image](https://user-images.githubusercontent.com/92938137/171098412-c398afc4-a120-4ae8-8b08-ea7450835f16.png)
 
 # ACKNOWLEDGEMENT
 - [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
